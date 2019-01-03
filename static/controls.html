@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Controls</title>
+</head>
+<style>
+    input[type=range] {
+  -webkit-appearance: none;
+  width: 100%;
+  margin: 20.8px 0;
+}
+input[type=range]:focus {
+  outline: none;
+}
+input[type=range]::-webkit-slider-runnable-track {
+  width: 100%;
+  height: 8.4px;
+  cursor: pointer;
+  box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
+  background: #3071a9;
+  border-radius: 1.3px;
+  border: 0.2px solid #010101;
+}
+input[type=range]::-webkit-slider-thumb {
+  box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
+  border: 7.1px solid #000000;
+  height: 50px;
+  width: 50px;
+  border-radius: 15px;
+  background: #00d9ff;
+  cursor: pointer;
+  -webkit-appearance: none;
+  margin-top: -21px;
+}
+input[type=range]:focus::-webkit-slider-runnable-track {
+  background: #367ebd;
+}
+input[type=range]::-moz-range-track {
+  width: 100%;
+  height: 8.4px;
+  cursor: pointer;
+  box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
+  background: #3071a9;
+  border-radius: 1.3px;
+  border: 0.2px solid #010101;
+}
+input[type=range]::-moz-range-thumb {
+  box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
+  border: 7.1px solid #000000;
+  height: 50px;
+  width: 50px;
+  border-radius: 15px;
+  background: #00d9ff;
+  cursor: pointer;
+}
+input[type=range]::-ms-track {
+  width: 100%;
+  height: 8.4px;
+  cursor: pointer;
+  background: transparent;
+  border-color: transparent;
+  color: transparent;
+}
+input[type=range]::-ms-fill-lower {
+  background: #2a6495;
+  border: 0.2px solid #010101;
+  border-radius: 2.6px;
+  box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
+}
+input[type=range]::-ms-fill-upper {
+  background: #3071a9;
+  border: 0.2px solid #010101;
+  border-radius: 2.6px;
+  box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
+}
+input[type=range]::-ms-thumb {
+  box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
+  border: 7.1px solid #000000;
+  height: 50px;
+  width: 50px;
+  border-radius: 15px;
+  background: #00d9ff;
+  cursor: pointer;
+  height: 8.4px;
+}
+input[type=range]:focus::-ms-fill-lower {
+  background: #3071a9;
+}
+input[type=range]:focus::-ms-fill-upper {
+  background: #367ebd;
+}
+
+</style>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script type="text/javascript">
+
+function keyPress(value){
+    $.get("/" + value)
+}
+
+function volumeChange(level){
+    $.get("/volume?level=" + level)
+    document.get
+}
+
+</script>
+<body>
+<div align="center" style="margin:3px">
+    <button type="button"
+            onclick="keyPress('left')"
+            style="width:100%;height:200px;background-color:#4CAF50;font-size:40px;"
+            value="Left">
+        Left
+    </button>
+</div>
+
+<div align="center" style="margin:3px">
+    <button type="button"
+            onclick="keyPress('right')"
+            style="width:100%;height:200px;background-color:#008CBA;font-size:40px;"
+            value="Right">
+        Right
+    </button>
+</div>
+
+<div align="center" style="margin:3px">
+    <button type="button"
+            onclick="keyPress('space')"
+            style="width:100%;height:200px;background-color:#FFFF00;font-size:40px;"
+            value="Space">
+        Space
+    </button>
+</div>
+
+<div align="center" style="margin:50px">
+    <input type="range"
+           id="volume"
+           name="volume"
+           min="0" max="100" value="30" step="5"
+           onchange="volumeChange(value)"
+           style="width:100%; cursor:pointer;">
+    <label for="volume" style="font-size:30px">Volume</label>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,5 @@
+Flask_RESTful==0.3.7
+py_applescript==1.0.1
+Flask==1.0.2
+applescript==2018.11.19
+gunicorn=19.9.0
